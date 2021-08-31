@@ -1,0 +1,29 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Cartão de ponto</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button color="Light" menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="Overflow-content">
+  <ion-card *ngFor="let Documento of documents">
+    <ion-card-header>
+      <ion-card-subtitle color="primary">Periodo:</ion-card-subtitle>
+      <ion-card-title color="primary">{{Documento.Periodo}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-item class="item-card">
+      <ion-icon name="calendar-outline" slot="start" color="primary"></ion-icon>
+      <ion-label>Documento em PDF</ion-label>
+      <ion-button color="warning" lot="end" (click)="preview(Documento.scan)">View</ion-button>
+    </ion-item>
+    <ion-card-content>
+    cartão de ponto do(a) fucnionario: {{Documento.Funcionario}}
+    </ion-card-content>
+  </ion-card>
+
+  </div>
+  </ion-content>

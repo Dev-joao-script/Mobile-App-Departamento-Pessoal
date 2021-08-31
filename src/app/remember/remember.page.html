@@ -1,0 +1,41 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+  <img src="./assets/undraw_authentication_fsn5.svg" class="Img" >
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle color="primary">Cepelma Ind.</ion-card-subtitle>
+      <ion-card-title color="primary">Recuperar Senha</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngFor="let post of Posts">
+        <ion-item class="item-card">
+          <ion-icon name="log-in-outline" slot="start" color="primary"></ion-icon>
+          <ion-label color="primary">Seu login: {{post.men_use}}</ion-label>
+        </ion-item>
+
+        <ion-item class="item-card">
+          <ion-icon name="barcode-outline" slot="start" color="primary"></ion-icon>
+          <ion-label color="primary">Sua senha: {{post.mem_pass}}</ion-label>
+        </ion-item>
+        
+      </div>
+    </ion-card-content>
+
+<ion-item>
+<ion-thumbnail >
+  <ion-img src="./assets/LOGOCEPELMA.jpg" width="30px" height="30px" ></ion-img>
+</ion-thumbnail>
+</ion-item>
+<p>Dica:</p>
+<p><small>** Ao digitar o CPF não coloque pontos ou barras!</small></p>
+</ion-card>
+
+</ion-content>
+
+
+

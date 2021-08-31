@@ -1,0 +1,85 @@
+
+.text-title{
+    color: whitesmoke;
+  }
+  
+  .Content-home{
+  --background: rgb(255,248,10);
+  --background: -moz-linear-gradient(305deg, rgba(255,248,10,1) 0%, rgba(255,251,113,0.7539390756302521) 41%, rgba(255,254,223,0) 100%);
+  --background: -webkit-linear-gradient(305deg, rgba(255,248,10,1) 0%, rgba(255,251,113,0.7539390756302521) 41%, rgba(255,254,223,0) 100%);
+  --background: linear-gradient(305deg, rgba(255,248,10,1) 0%, rgba(255,251,113,0.7539390756302521) 41%, rgba(255,254,223,0) 100%);
+  --filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff80a",endColorstr="#fffedf",GradientType=1);
+  }
+  
+  ion-toolbar{
+    --background: rgb(7, 7, 109);
+    border-radius: 15px;
+    margin: 3px;
+    // width: 90%;
+    vertical-align:middle;
+    display:table-cell;
+    box-shadow: 5px 5px 5px black;
+  }
+  
+  .Header{
+    display:table;
+    padding: 5px;
+    border: none;
+    position: absolute;
+    top: 3px;
+    width: 100%;
+  }
+  
+  .img-logo{
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  }
+  
+  .Overflow-content{
+    height: 90%;
+    width: 100%;
+    overflow: auto;
+    top: 10%;
+    position: absolute;
+    }
+    
+    ion-card{
+      border-radius: 15px;
+      color: white;
+      --background: linear-gradient( 135deg, #FFCF71 10%, #2376DD 100%);
+    }
+    
+    .item-card{
+      --background:transparent;
+    }
+    
+    ion-content{
+      --background: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
+      --overflow: hidden;
+    }
+  
+    #Content{
+      width: 100%;
+      position: absolute;
+      top: 10%;
+      height: 90%;
+      overflow: auto;
+    }
+  
+    img{
+      width: 94%;
+      height: 50%;
+      border: solid blue 1px;
+      border-radius: 15px;
+      margin: 10px;
+    }
+
+    .back{
+      font-size: 2em;
+    }
+
+    .letfMn{
+      padding-left: 10px;
+    }
+   

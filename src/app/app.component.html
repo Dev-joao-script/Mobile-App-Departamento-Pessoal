@@ -1,0 +1,65 @@
+<ion-app>
+  <ion-menu menuId="main-menu" content-id="main">
+<ion-content class="content-menu">
+  <div class="content-menu-bg" ></div>
+  <ion-card  class="Card_Perfil">
+    <ion-card-header class="card-header" *ngFor="let membro of menbros " >
+      <img class="Pef_Avatar" src="http://www.cepelma.com.br/IMAGENS/{{membro.scan}}" alt="">
+      <ion-card-subtitle color="light">{{membro.Ocupacao}}</ion-card-subtitle>
+      <ion-card-title color="light">{{membro.nome}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+<ion-list class="content-list">
+  <!-- <ion-menu-toggle>
+    <ion-item  class="content-Item" (click)="goeHome()" >
+      <ion-icon  color="primary" color="primary" slot="start" name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-item>
+  </ion-menu-toggle> -->
+  <ion-menu-toggle>
+  <ion-item  class="content-Item" routerLink="contra-cheques" >
+    <ion-icon  color="primary" color="primary" slot="start" name="wallet"></ion-icon>
+    <ion-label>Contra cheque</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<ion-menu-toggle>
+  <ion-item  class="content-Item" [routerLink]="['cartao-ponto/', nextnavigation]">
+    <ion-icon  color="primary" slot="start" name="calendar"></ion-icon>
+    <ion-label>Cartão de Ponto</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<ion-menu-toggle>
+  <ion-item  class="content-Item" [routerLink]="['ferias/', nextnavigation]">
+    <ion-icon  color="primary" slot="start"  name="sunny"></ion-icon>
+    <ion-label>Férias</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+    <ion-menu-toggle>
+  <ion-item  class="content-Item" routerLink="atestados">
+    <ion-icon  color="primary" slot="start" name="bandage"></ion-icon>
+    <ion-label>Atestados</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<ion-menu-toggle>
+  <ion-item  class="content-Item"  routerLink="regulamento-interno">
+    <ion-icon  color="primary" slot="start" name="newspaper" ></ion-icon>
+    <ion-label>Regulamento Interno</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+<!-- <ion-menu-toggle>
+  <ion-item  class="content-Item" routerLink="upload-documents">
+    <ion-icon  color="primary" slot="start" name="cloud-upload"></ion-icon>
+    <ion-label>Entregar Documentos</ion-label>
+  </ion-item>
+</ion-menu-toggle> -->
+<ion-menu-toggle>
+  <ion-item  class="content-Item"  (click)="backButtonEvent()">
+    <ion-icon  color="primary" slot="start" name="exit-outline" ></ion-icon>
+    <ion-label>Sair</ion-label>
+  </ion-item>
+</ion-menu-toggle>
+</ion-list>
+</ion-content>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

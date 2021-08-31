@@ -1,0 +1,29 @@
+<ion-content>
+  <img src="./assets/undraw_Security_on_re_e491.svg" class="Img" >
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="primary">Definição de Senha</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating" color="primary">Definir Senha</ion-label>
+        <ion-input type="password" value ="" [(ngModel)]="logindata.new"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Confirmar Senha</ion-label>
+        <ion-input type="password" value ="" [(ngModel)]="logindata.confirm"></ion-input>
+      </ion-item>   
+      <ion-item>
+        <ion-label position="floating" color="primary">Definir E-mail de recuperação</ion-label>
+        <ion-input type="email" value ="" [(ngModel)]="logindata.email"></ion-input>
+      </ion-item>      
+  <ion-button class="BtnLogin" size="full" (click) = "cadastrar()">Definir</ion-button>
+</ion-card-content>
+<ion-item>
+<ion-thumbnail >
+  <ion-img src="./assets/LOGOCEPELMA.jpg" width="30px" height="30px" ></ion-img>
+</ion-thumbnail>
+</ion-item>
+</ion-card>
+</ion-content>

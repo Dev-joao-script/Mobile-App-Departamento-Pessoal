@@ -1,0 +1,49 @@
+ion-content{
+  --background: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
+  --overflow: hidden;
+}
+
+ion-header{
+  text-align: center;
+  align-items: center;
+  border: solid 1px black;
+  box-shadow: 5px 5px 5px 5px black;
+  border-radius: 15px;
+  width: 95%;
+  --background: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
+  margin-left: 8px;
+  margin-top: 5px;
+  position: absolute;
+}
+
+ion-toolbar{
+  border-radius: 15px;
+  text-align: center;
+  align-items: center;
+  --background: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
+  color: white;
+}
+
+.Overflow-content{
+height: 90%;
+width: 100%;
+overflow: auto;
+top: 10%;
+position: absolute;
+}
+
+ion-card{
+  border-radius: 15px;
+  color: white;
+  --background: linear-gradient( 135deg, #FFCF71 10%, #2376DD 100%);
+}
+
+.item-card{
+  --background:transparent;
+}
+
+
+.md ion-toolbar ion-heade{
+  height: 5%;
+
+}

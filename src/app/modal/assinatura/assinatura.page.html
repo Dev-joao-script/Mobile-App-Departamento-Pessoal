@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" color="danger">
+        Sair
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="light">Assinatura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<p>Você esta prestes a assinar seu cartão de ponto.</p>
+<p>Antes de prosseguir lembre-se de conferir seu ponto na opção visualizar.</p>
+<ul>
+  <p>Esteja ciente de que:</p>
+  <li>Apos a assinatura so poderá ser alterado ou questinado o ponto presencialmente,
+    no departamento administrativo, em horario de atendimento administrativo.
+  </li>
+  <li>A assinatura do ponto deve ser feita ate o ultimo dia do mês a qual corresponda.</li>
+  <li>A assinatura do ponto exige confirmação por senha unica e intrasferivel 
+    (senha definida pelo usuario no momento do cadastro do aplicativo). A senha aqui descrita e 
+  intransferivel e de responsabilidade do usuario. sendo assim por tanto a assintura do ponto
+de responsabilidade do usuario ao qual o ponto pertence.</li>
+  <li>Qualquer problema relacionado ao ponto (erros e questionamentos) pode ser questinado no canal de atendimento do 
+    departamento pessoal no numero <strong> 031 9 8295-9119 (WathsApp)  e 031 3712-1195 (ligações)</strong> antes de sua assinatura.
+  </li>
+  <li>O telefone do canal de atendimento funciona em horario administrativo.</li>
+  <li>O horario administrativo é de 08:00 as 15:00 de segunda a sexta-feira</li>
+</ul>
+<br>
+<ion-button class="BtnLogin" color="success" size="full" (click) = "view()">Visualizar ponto de: {{Periodo}}</ion-button>
+<ion-button class="BtnLogin" color="primary" size="full" (click) = "Assinar()">Assinar ponto de: {{Periodo}}</ion-button>
+
+
+
+</ion-content>

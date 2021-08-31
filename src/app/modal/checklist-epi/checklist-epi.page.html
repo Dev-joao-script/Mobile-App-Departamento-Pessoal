@@ -1,0 +1,217 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" color="danger">
+        Sair
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">Checklist Epi</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    
+    <ion-item hidden>
+      <ion-item slot="start">
+        <ion-input type="text" [(ngModel)]="Userid" name="cpf" ></ion-input>
+      </ion-item>
+    </ion-item> 
+
+    <ion-item hidden>
+      <ion-item slot="start">
+        <ion-datetime [(ngModel)]="dataDay" name="data" ></ion-datetime>
+      </ion-item>
+    </ion-item> 
+
+
+    <ion-item class="ion-text-center">
+    <ion-label color="primary">Marque a opção caso esteja com o EPI</ion-label>
+    </ion-item>
+    <ion-item>
+      <p class="p-tertiary">Confira cada um dos seguintes EPIS, antes de iniciar seu trabalho,
+        e <strong class="p-red">marque</strong> caso esteja <strong class="p-red">conforme e em sua posse</strong> para iniciar seu trabalho!</p>
+    </ion-item>
+    <ion-list>
+
+      <ion-item *ngFor="let item of calcado" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox [(ngModel)]="optionsOn" name="optionsOn" (click)="opt_calcato()"></ion-checkbox>
+      </ion-item> 
+      <ion-item [ngClass]="optionsOn ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.calcado" name="calcado"></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let item of luvas" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar >
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox [(ngModel)]="options_luva" name="options_luva" (click)="opt_luva()"></ion-checkbox>
+      </ion-item> 
+      <ion-item [ngClass]="options_luva ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.luvas" name="luvas"></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let item of olhos" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox  [(ngModel)]="opt_olho" name="opt_olho" (click)="opt_olhos()"></ion-checkbox>
+      </ion-item> 
+      <ion-item [ngClass]="opt_olho ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.olhos" name="olhos"></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let item of ouvidos" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox [(ngModel)]="opt_ouvido" name="opt_ouvido" (click)="opt_ouvidos()"></ion-checkbox>
+      </ion-item> 
+      <ion-item [ngClass]="opt_ouvido ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.ouvidos" name="ouvidos" ></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let item of dorso" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        </ion-item>
+        <ion-item class="ion-align-items-end">
+        <ion-checkbox [(ngModel)]="opt_dorso" name="opt_dorso" (click)="opt_dorsos()"></ion-checkbox>
+        </ion-item>
+      </ion-item> 
+      <ion-item [ngClass]="opt_dorso ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.dorso" name="dorso"></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let item of pescoco" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox [(ngModel)]="opt_pescoco" name="opt_pescoco" (click)="opt_pescocos()"></ion-checkbox>
+      </ion-item> 
+      <ion-item [ngClass]="opt_pescoco ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.pescoco" name="pescoco"></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let item of pernas" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox [(ngModel)]="opt_pernas" name="opt_pernas" (click)="opt_pernass()"></ion-checkbox>
+      </ion-item> 
+      <ion-item [ngClass]="opt_pernas ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.pernas" name="pernas"></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let item of bracos" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox [(ngModel)]="opt_bracos" name="opt_bracos" (click)="opt_bracoss()"></ion-checkbox>
+      </ion-item> 
+      <ion-item [ngClass]="opt_bracos ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.bracos" name="bracos"></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let item of cabeca" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox [(ngModel)]="opt_cabeca" name="opt_cabeca" (click)="opt_cabecas()"></ion-checkbox>
+      </ion-item>
+      <ion-item [ngClass]="opt_cabeca ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.cabeca" name="cabeca"></ion-input>
+      </ion-item> 
+
+      <ion-item *ngFor="let item of uniforme" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox [(ngModel)]="opt_uniforme" name="opt_uniforme" (click)="opt_uniformes()"></ion-checkbox>
+      </ion-item> 
+      <ion-item [ngClass]="opt_uniforme ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.uniforme" name="uniforme"></ion-input>
+      </ion-item> 
+
+      <ion-item *ngFor="let item of cinto" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox [(ngModel)]="opt_cinto" name="opt_cinto" (click)="opt_cintos()"></ion-checkbox>
+      </ion-item> 
+      <ion-item [ngClass]="opt_cinto ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.cinto" name="cinto"></ion-input>
+      </ion-item> 
+
+      <ion-item *ngFor="let item of acessorio" >
+        <ion-item slot="start">
+          <ion-avatar class="avatar2">
+            <img src="https://cepelma.com.br/epis/{{item.Scan}}"  />
+          </ion-avatar>
+        </ion-item>
+        <ion-label class="p-primary">{{item.Nome}}</ion-label>
+        <ion-checkbox [(ngModel)]="opt_acessorio" name="opt_acessorio" (click)="opt_acessorios()"></ion-checkbox>
+      </ion-item>
+      <ion-item [ngClass]="opt_acessorio ? 'hide' : 'show' ">
+        <ion-label position="floating"> Qual Motivo de estar sem este EPI? (Digite Aqui!)</ion-label>
+        <ion-input type="text" autocomplete [(ngModel)]="epiSend.acessorio" name="acessorio"></ion-input>
+      </ion-item>
+      
+      
+    </ion-list>
+    <ion-button expand="block" fill="outline" color="primary" type="submit">
+      {{isUpdate ? 'Enviar' : 'Enviar'}}
+    </ion-button>
+  </form>
+
+</ion-content>

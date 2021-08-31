@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "798820140217",
+    "project_id": "depart-aacf9",
+    "storage_bucket": "depart-aacf9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798820140217:android:d372636f17cfc1b5c08768",
+        "android_client_info": {
+          "package_name": "Cepelma.Depart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "798820140217-jrvdh9oclbm8j2i7e8f60h9827e54oog.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMJg_ezmqtSZCTHhumWBW6uEPq_gk6bhw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "798820140217-jrvdh9oclbm8j2i7e8f60h9827e54oog.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
