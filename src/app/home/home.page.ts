@@ -177,7 +177,7 @@ export class HomePage implements OnInit, OnDestroy{
   }
 
   getCtc(){
-    // console.log(this.Posts[0].Cod);
+    console.log(this.Posts[0].Cod);
     let Var = this.Posts[0].Cod;
     // const fn = this.sourseresolve[0].codigo;
     const source = this.http.get(this.url+'CtcULt.php?Data='+ Var).pipe(map(res=>res.json()));
