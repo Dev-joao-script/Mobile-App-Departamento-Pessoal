@@ -279,8 +279,6 @@ export class HomePage implements OnInit, OnDestroy{
         console.log('force update the screen');
       });
     });
-
-
   }
 
   Details(ID){
